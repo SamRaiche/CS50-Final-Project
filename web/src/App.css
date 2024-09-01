@@ -49,10 +49,32 @@
   cursor: pointer;
 }
 
-.Todo-button {
+.todoButton {
   background: #61dafb;
   color: #282c34;
   border: none;
-  padding: 0.55rem;
+  padding: 0.25rem;
   cursor: pointer;
+}
+
+#Todo title
+
+.todoTitle h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+#Todo input
+
+.todoInput input[type="text"] {
+  width: 1000px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }

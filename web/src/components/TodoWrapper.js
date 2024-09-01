@@ -1,7 +1,10 @@
 import React from 'react'
+import { TodoForm } from './TodoForm'
 
 export const TodoWrapper = () => {
     return (
-        <form>TodoWrapper</form>
+        <div>
+            <TodoForm />
+        </div>
     )
 }
