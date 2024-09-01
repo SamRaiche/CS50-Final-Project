@@ -3,9 +3,11 @@ import React, {useState} from 'react';
     export const TodoForm = ({updateTask}) => {
         const [input, setInput] = useState(""); {/*Initialize state*/}
     
-        const addTask = (event) => {
-            event.preventDefault(); {/*Prevent the form from reloading*/}
+        const addTask = e => {
+            e.preventDefault(); /*Prevent the form from reloading*/
+
             updateTask(input);
+            setInput("")
         };
 
     return (

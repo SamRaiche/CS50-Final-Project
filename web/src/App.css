@@ -51,7 +51,7 @@
 
 /* Input Field */
 .todo-css input[type="text"] {
-  width: calc(100% - 1500px);
+  width: calc(100% - 1000px); /* Not the greatest design for different devices (monitor and laptop look different)*/
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
