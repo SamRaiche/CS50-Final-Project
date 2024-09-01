@@ -8,8 +8,8 @@ export const TodoWrapper = () => {
     const [todo, setTodo] = useState([])
 
     const updateTask = task => {
-        setTodo({id: uuidv4}, {task: todo})
-        console.log(todo)
+        setTodo([...todo, {id: uuidv4(), task: todo}]);
+        console.log(todo);
     }
 
     return (
