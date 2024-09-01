@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 
     export const TodoForm = () => {
-        const [input, setInput] = useState(""); // Initialize state
+        const [input, setInput] = useState(""); {/*Initialize state*/}
     
         const addTask = (event) => {
-            event.preventDefault(); // Prevent the form from reloading
+            event.preventDefault(); {/*Prevent the form from reloading*/}
             console.log(input); 
             setInput(""); 
         };
@@ -16,9 +16,9 @@ import React, {useState} from 'react';
                 className='input' 
                 placeholder='What is the task?' 
                 onChange = {(e) => setInput(e.target.value)}> 
-                // e.target is refering to the target element that triggered this event - the form changing
+                {/* // e.target is refering to the target element that triggered this event - the form changing
                 // adding .value retreves the value from the input field
-                // setInput updates the input state with the new value from the input field
+                // setInput updates the input state with the new value from the input field*/}
             </input> 
 
             <button className='button' type='submit'>Add Task</button>
