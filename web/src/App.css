@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 75px 10px 30px;
+  background: #162740;
+  border: transparent;
+}
+
+.todo-list .todo-list__title {
+  padding: 3px 6px;
+  color: #f1faee;
+  background-color: #264456;
+}
+
+.todo-list .todo-list__label {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+  font-size: 24px;
+  font-family: Lato, sans-serif;
+  color: #f1faee;
+  cursor: pointer;
+}
