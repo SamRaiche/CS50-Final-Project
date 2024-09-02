@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import { Todo } from './Todo';
 
-    export const TodoForm = ({addTodo}) => {
+    export const TodoForm = () => {
         const [input, setInput] = useState(""); {/*Initialize state*/}
     
         const addTask = e => {
             e.preventDefault(); /*Prevent the form from reloading*/
-            addTodo(input)
+
             
             console.log(input)
+            
         }
 
 
