@@ -16,6 +16,7 @@ import React, {useState} from 'react';
                 type='text' 
                 className='input' 
                 placeholder='What is the task?' 
+                value={input}
                 onChange = {(e) => setInput(e.target.value)}> 
 
                 {/* // e.target is refering to the target element that triggered this event - the form changing
