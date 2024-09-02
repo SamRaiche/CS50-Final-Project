@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
+import { Todo } from './Todo';
 
-    export const TodoForm = ({updateTask}) => {
+    export const TodoForm = ({addTodo}) => {
         const [input, setInput] = useState(""); {/*Initialize state*/}
     
         const addTask = e => {
             e.preventDefault(); /*Prevent the form from reloading*/
+            addTodo(input)
+            
+            console.log(input)
+        }
 
-            updateTask(input);
-            setInput("")
-        };
 
     return (
         <form className='todo-css' onSubmit={addTask}>

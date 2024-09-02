@@ -7,14 +7,13 @@ export const TodoWrapper = () => {
 
     const [todo, setTodo] = useState([])
 
-    const updateTask = tassk => {
-        setTodo([...todo, {id: uuidv4(),task: tassk, completed: false, editing: false}]);
-        console.log(todo);
+    const addTodo = tassk => {
+        setTodo([...todo, {id: uuidv4, task: tassk, completed: false, editing: false}])
     }
 
     return (
         <div>
-            <TodoForm updateTask = {updateTask}/>
+            <TodoForm addTodo = {addTodo}/>
         </div>
     )
 }
