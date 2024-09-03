@@ -1,14 +1,20 @@
 import React, {useState} from 'react';
-import { Todo } from './Todo';
 
-    export const TodoForm = () => {
+
+    {/* addTodo being brought in as a prop from TodoWrapper */}
+    export const TodoForm = ({addTodo}) => {
         const [input, setInput] = useState(""); {/*Initialize state*/}
     
         const addTask = e => {
             e.preventDefault(); /*Prevent the form from reloading*/
 
             
-            console.log(input)
+            
+            if (input.trim()) {
+                addTodo(input)
+                setInput("")
+            }
+            
             
         }
 
@@ -29,6 +35,7 @@ import { Todo } from './Todo';
             </input> 
 
             <button className='button' type='submit'>Add Task</button>
+            
         </form>
     );
 }
