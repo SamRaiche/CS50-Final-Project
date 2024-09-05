@@ -1,0 +1,17 @@
+meta {
+  name: [post] todo
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{root}}/todo
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "damon"
+  }
+}
