@@ -2,6 +2,8 @@ import React from 'react'
 
 export const TodoEdit = () => {
     return (
-        <div>TodoEdit</div>
+        <div>
+            <button>Delete</button>
+        </div>
     )
 }

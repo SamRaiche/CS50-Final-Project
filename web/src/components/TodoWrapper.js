@@ -13,7 +13,7 @@ export const TodoWrapper = () => {
     {/* addTodo function takes in one perameter (the users input text aka todo) and it's purpose is to use the function setTodos to create an array containing all other todos and giving the new todos an object containing their id and their task */}
     {/* setTodos basically creates an array that includes all the privious todos and their id's as seperate dictonaries and the dictonary seen in the function below creates a new dictonary with an id and task for the new todo */}
     const addTodo = (todo) => {
-        setTodos([...todos, {id: uuidv4, task: todo }])
+        setTodos([...todos, {id: uuidv4, task: todo}])
     }
 
 
