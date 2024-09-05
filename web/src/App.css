@@ -73,11 +73,15 @@
   transition: background-color 0.3s ease;
 }
 
-.todo-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.todolist {
+  width: calc(100% - 1000px);
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
   font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  text-align: left;
+  margin: 0 auto
 }

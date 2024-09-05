@@ -27,7 +27,7 @@ export const TodoWrapper = () => {
                     {/* todos.map iterates over the todos array looing for each todo the user has typed */}
                     {/* When the map method finds a unique key it will output the task of that object (dictionary) onscreen */}
                     {todos.map((todo) => (
-                        <p key={todo.id}>{todo.task}</p>
+                        <p className='todolist' key={todo.id}>{todo.task}</p>
                     ))}
             </div>
         </div>
