@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const TodoEdit = () => {
+export const TodoSideBar = () => {
     return (
-        <div>
-            <button>Delete</button>
+        <div className='sidebar'>
+           
         </div>
     )
 }

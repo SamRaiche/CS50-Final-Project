@@ -60,3 +60,12 @@
   background-color: lightcoral;
   color: black
 }
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  height: 100 vh;
+  height: 100% ;
+  width: 300px;
+  background-color: lightblue;
+}
