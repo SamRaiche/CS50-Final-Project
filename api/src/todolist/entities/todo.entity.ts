@@ -1,8 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { TodoList } from './todolist.dto';
+import { TodoList } from './todolist.entity';
 
 @Entity()
-export class TodoDto {
+export class Todo {
     @PrimaryGeneratedColumn()
     id: number
 
@@ -11,12 +11,6 @@ export class TodoDto {
 
     @Column({ default: false })
     completed: boolean
-
-    // TODO: default to current unix_ts (sqlite default / timestamp?)
-    @Column()
-    created_at: number
-    @Column()
-    updated_at: number
 
     @ManyToOne(() => TodoList, (todoList) => todoList.todos, { onDelete: "CASCADE" })
     todoList: TodoList;

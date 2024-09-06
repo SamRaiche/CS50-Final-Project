@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { TodoDto } from "./todo.dto";
+import { Todo } from "./todo.entity";
 
 @Entity()
 export class TodoList {
@@ -9,6 +9,6 @@ export class TodoList {
     @Column()
     name: string
 
-    @OneToMany(() => TodoDto, (todo) => todo.todoList, { cascade: true })
-    todos: TodoDto[]
+    @OneToMany(() => Todo, (todo) => todo.todoList, { cascade: true })
+    todos: Todo[]
 }

@@ -1,0 +1,17 @@
+meta {
+  name: create todolist
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{root}}/todolist
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "subjects"
+  }
+}

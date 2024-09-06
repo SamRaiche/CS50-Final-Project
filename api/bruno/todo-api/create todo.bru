@@ -1,17 +1,17 @@
 meta {
-  name: [post] todo
+  name: create todo
   type: http
-  seq: 4
+  seq: 5
 }
 
 post {
-  url: {{root}}/todo
+  url: {{root}}/todolist/2
   body: json
   auth: none
 }
 
 body:json {
   {
-    "name": "damon"
+    "title": "oatmeal"
   }
 }

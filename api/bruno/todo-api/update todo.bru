@@ -1,0 +1,17 @@
+meta {
+  name: update todo
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{root}}/todolist/1/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "oatmeal"
+  }
+}
