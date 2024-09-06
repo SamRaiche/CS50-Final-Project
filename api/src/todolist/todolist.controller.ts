@@ -28,7 +28,7 @@ export class TodoListController {
   // While we *could* update with just the todoId, we'll require the todo item
   // being updated to be a part of the list to keep the URL consistent
   //
-  // /todolist/listId/todoId
+  // /todolist/:listId/:todoId
 
   @Post(":id/:todoId")
   async completeTodo(@Param("id") id: number, @Param("todoId") todoId: number): Promise<Todo> {
