@@ -1,5 +1,21 @@
 # Final Project (API)
 
+## Run
+```shell
+
+npm install
+
+npm run start:dev
+
+# retrieve all lists (tests the server is running)
+curl -v http://localhost:3000/todolist
+
+# use bruno with the requests found in the ./bruno directory
+```
+
+
+## Setup
+
 * install [asdf](https://asdf-vm.com/guide/introduction.html) - manages tool
   (i.e., `nodejs`) versions
 
