@@ -34,4 +34,10 @@ export class TodoListController {
   async completeTodo(@Param("id") id: number, @Param("todoId") todoId: number): Promise<Todo> {
     return this.todoService.updateTodo(id, todoId, { completed: true });
   }
+
+  @Get("hello")
+  sayHi(@Param("id") id: number, @Param("todoId") todoId: number): string {
+    return "hello world";
+  }
+
 }
