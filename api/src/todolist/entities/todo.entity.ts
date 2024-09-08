@@ -12,6 +12,7 @@ export class Todo {
     @Column({ default: false })
     completed: boolean
 
+
     @ManyToOne(() => TodoList, (todoList) => todoList.todos, { onDelete: "CASCADE" })
     todoList: TodoList;
 }
