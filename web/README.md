@@ -1,3 +1,17 @@
+# Running Locally
+
+In order to run this on a development machine, you have to have the API running
+```shell
+
+# start the api
+cd api
+npm run start:dev
+
+# start the app
+cd web
+&& npm start
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

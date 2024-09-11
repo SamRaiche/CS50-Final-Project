@@ -8,7 +8,7 @@ npm install
 npm run start:dev
 
 # retrieve all lists (tests the server is running)
-curl -v http://localhost:3000/todolist
+curl -v http://localhost:3001/todolist
 
 # use bruno with the requests found in the ./bruno directory
 ```
@@ -38,11 +38,11 @@ cd api
 
 npm run test
 
-# launch API on port 3000 (watching files)
+# launch API on port 3001 (watching files)
 npm run start:dev
 
 # ensure api is up and running
-curl -v http://localhost:3000
+curl -v http://localhost:3001
 
 ######################################
 # sqlite
