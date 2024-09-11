@@ -1,5 +1,4 @@
 import { Body, Controller, Delete, Get, Logger, Param, Post } from '@nestjs/common';
-import { Request } from 'express';
 import { Todo } from './entities/todo.entity';
 import { TodoList } from './entities/todolist.entity';
 import { TodoListService } from './todolist.service';
@@ -33,11 +32,6 @@ export class TodoListController {
   @Post(":id/:todoId")
   async completeTodo(@Param("id") id: number, @Param("todoId") todoId: number): Promise<Todo> {
     return this.todoService.updateTodo(id, todoId, { completed: true });
-  }
-
-  @Get("hello")
-  sayHi(@Param("id") id: number, @Param("todoId") todoId: number): string {
-    return "hello world";
   }
 
 }

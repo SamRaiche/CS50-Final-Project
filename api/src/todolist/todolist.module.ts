@@ -6,6 +6,10 @@ import { Todo } from './entities/todo.entity';
 import { TodoList } from './entities/todolist.entity';
 
 @Module({
+  //
+  // Register specific entities, enabling you to inject repositores into
+  // services using @InjectRepository()
+  //
   imports: [TypeOrmModule.forFeature([Todo, TodoList])],
   providers: [TodoListService],
   controllers: [TodoListController],

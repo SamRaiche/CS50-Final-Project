@@ -47,6 +47,11 @@ curl -v http://localhost:3000
 ######################################
 # sqlite
 ######################################
-
+#
+# @nestjs/typeorm provides model/repository injection, testability, and asynchronous configuration.
+#
+# typeorm is the most mature ORM available for TypeScript (it's written in `ts`)
+#
+# install typeorm and the sqlite driver
 npm install @nestjs/typeorm typeorm sqlite3
 ```

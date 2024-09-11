@@ -16,12 +16,6 @@ export class TodoListService {
         private todoRepository: Repository<Todo>,
     ) { }
 
-    private now_seconds(): number {
-        // Date.now() returns milliseconds from midnight, Jan 1 1970, UTC
-        return Math.floor(Date.now() / 1000);
-    }
-
-
     //
     // todolist
     //
@@ -37,6 +31,13 @@ export class TodoListService {
     async findOneTodoList(id: number): Promise<TodoList> {
         return this.todoListRepository.findOne({ where: { id: id }, relations: ["todos"] });
     }
+    async findOneTodoListOrFail(id: number): Promise<TodoList> {
+        const todoList = await this.findOneTodoList(id);
+        if (!todoList) {
+            throw new Error(`TodoList not found for id ${id}`);
+        }
+        return todoList;
+    }
 
     async deleteTodoList(id: number): Promise<void> {
         await this.todoListRepository.delete(id);
@@ -45,20 +46,16 @@ export class TodoListService {
     //
     // todo
     //
-    async createTodo(todoListId: number, todo: Omit<Todo, "id" | "todoList">): Promise<Todo> {
-        const todoList = await this.findOneTodoList(todoListId);
-        if (!todoList) {
-            throw new Error(`TodoList not found for id ${todoListId}`);
-        }
+    async createTodo(todoListId: number, todo: Omit<Todo, "id" | "todoList">): Promise<Omit<Todo, "todoList">> {
+        const todoList = await this.findOneTodoListOrFail(todoListId);
         const newTodo = this.todoRepository.create({ ...todo, todoList: todoList });
-        return this.todoRepository.save(newTodo);
+        const savedTodo = await this.todoRepository.save(newTodo);
+        delete savedTodo.todoList;
+        return savedTodo;
     }
 
     async updateTodo(todoListId: number, id: number, updatedTodo: Partial<Todo>): Promise<Todo> {
-        const todoList = await this.findOneTodoList(todoListId);
-        if (!todoList) {
-            throw new Error(`TodoList not found for id ${todoListId}`);
-        }
+        const todoList = await this.findOneTodoListOrFail(todoListId);
         await this.todoRepository.update(id, updatedTodo);
         return this.todoRepository.findOne({ where: { id } });
     }
