@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 // addTodo being brought in as a prop from TodoLists
-export const TodoForm = ({ addTodo }) => {
+function TodoForm(addTodo) {
     // initialize state
     const [input, setInput] = useState("");
 
@@ -35,3 +35,5 @@ export const TodoForm = ({ addTodo }) => {
         </form>
     );
 }
+
+export default TodoForm;

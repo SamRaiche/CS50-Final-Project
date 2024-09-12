@@ -1,66 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios';
 
-import { TodoForm } from './TodoForm'
+import TodoSidebar from './TodoSidebar';
+import TodoList from './TodoList';
+import API from '../services/api'
 
 function TodoLists() {
-
-    const [todoLists, setTodoLists] = useState([]);
+    const [currentListId, setCurrentListId] = useState(0);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
 
-    // useEffect executes during render or whenever the list of given state variables change
+    //
+    // useEffect executes during render or whenever the list of given state
+    // variables change.
+    //
+    // Every time the component is rendered, or when the `loading` field is set
+    // to true (i.e., someone triggered a load), we retrieve todo lists.
+    //
     useEffect(() => {
-        axios
-            .get("/todolist")
-            .then((response) => {
-                console.log(response.data);
-                console.log(Array.isArray(response.data));
-                setTodoLists(response.data);
-            })
-            .catch((error) => {
-                setError(error);
-            })
-            .finally(() => {
-                setLoading(false);
-            })
+    }, [loading, currentListId]);
 
-    }, [loading]);
-
-    const addTodo = (title) => {
-
-        const lst = todoLists[0];
-        console.log("sending to server");
-        console.log(title);
-        console.log(lst);
-
-        // TODO: determine what list (via the sidebar?) to send the new item to the current list
-        axios
-            .post(`/todolist/${lst.id}`, { "title": title })
-            .then((response) => {
-                setLoading(true);
-            })
+    function onListSelected(listId) {
+        console.log("selecting listId", listId);
+        setCurrentListId(listId);
     }
 
-    // Renders TodoForm and when doing so passes addTodo as a prop to the todoForm
-
     return (
-        <div>
-            <TodoForm addTodo={addTodo} />
-            <div>
-                {todoLists.map(todoList => (
-                    <div>
-                        <div><b>{todoList.name}</b></div>
-                        <ul>
-                            {todoList.todos.map(todo => (
-                                <li>{todo.title} {todo.completed ? "(completed)" : ""}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </div>
-        </div>)
+        <>
+            <TodoSidebar onListSelected={onListSelected} />
+            <div />
+            <TodoList listId={currentListId} />
+        </>
+    )
 }
-
 
 export default TodoLists;
