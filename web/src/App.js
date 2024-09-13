@@ -1,11 +1,11 @@
 import './App.css';
-import TodoLists from './components/TodoLists';
+import TodoBrowser from './components/TodoBrowser';
 
 function App() {
   return (
     <div className="App">
       <div style={{ marginTop: 200 }}></div>
-      <TodoLists />
+      <TodoBrowser />
     </div>
   );
 }

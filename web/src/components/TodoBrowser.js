@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import TodoSidebar from './TodoSidebar';
 import TodoList from './TodoList';
 
-function TodoLists() {
+export default function TodoBrowser() {
     const [currentListId, setCurrentListId] = useState(0);
 
     function onListSelected(listId) {
@@ -11,7 +11,7 @@ function TodoLists() {
         setCurrentListId(listId);
     }
 
-    console.log("TodoLists.rendering: ", currentListId);
+    console.log("TodoBrowser.rendering: ", currentListId);
     return (
         <>
             <TodoSidebar onListSelected={onListSelected} />
@@ -20,5 +20,3 @@ function TodoLists() {
         </>
     )
 }
-
-export default TodoLists;
