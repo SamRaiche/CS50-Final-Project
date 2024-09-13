@@ -1,5 +1,4 @@
 import './App.css';
-// import { TodoSideBar } from './components/TodoSideBar';
 import TodoLists from './components/TodoLists';
 
 function App() {

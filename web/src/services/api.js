@@ -10,8 +10,7 @@ function getURL(path) {
 const API = {
     getLists: async function () {
         try {
-            const response = await axios.get(getURL(""))
-            return response.data;
+            return (await axios.get(getURL(""))).data
         } catch (error) {
             console.log("API error: ", error);
             throw error;
@@ -35,7 +34,7 @@ const API = {
     },
 
     createTodo: async function (listId, title) {
-        return axios(getURL(`/${listId}`), { title });
+        return axios.post(getURL(listId), { title });
     },
 
 }

@@ -2,9 +2,7 @@
   text-align: center;
 }
 
-#Todo title
-
-.todo-css h2 {
+#Todo title .todo-css h2 {
   font-size: 24px;
   margin-bottom: 20px;
   color: #333;
@@ -14,7 +12,8 @@
 
 /* Input Field */
 .todo-css input[type="text"] {
-  width: calc(100% - 1000px); /* Not the greatest design for different devices (monitor and laptop look different)*/
+  width: calc(100% - 1000px);
+  /* Not the greatest design for different devices (monitor and laptop look different)*/
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
@@ -25,7 +24,6 @@
 }
 
 .todo-css button {
-  width: 100px;
   padding: 12px;
   font-size: 16px;
   background-color: #007bff;
@@ -37,11 +35,31 @@
 }
 
 @keyframes randomColors {
-  0% { background-color: #FF5733; }  /* Red */
-  25% { background-color: #33FF57; } /* Green */
-  50% { background-color: #3357FF; } /* Blue */
-  75% { background-color: #F0FF33; } /* Yellow */
-  100% { background-color: #FF33A8; } /* Pink */
+  0% {
+    background-color: #FF5733;
+  }
+
+  /* Red */
+  25% {
+    background-color: #33FF57;
+  }
+
+  /* Green */
+  50% {
+    background-color: #3357FF;
+  }
+
+  /* Blue */
+  75% {
+    background-color: #F0FF33;
+  }
+
+  /* Yellow */
+  100% {
+    background-color: #FF33A8;
+  }
+
+  /* Pink */
 }
 
 .todolist {
@@ -63,7 +81,7 @@
   margin: 0;
   padding: 0;
   height: 100 vh;
-  height: 100% ;
+  height: 100%;
   width: 300px;
   background-color: lightblue;
 }

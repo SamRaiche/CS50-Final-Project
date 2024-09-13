@@ -3,14 +3,12 @@ import API from '../services/api'
 
 function TodoListButton({ todoList, onListSelected }) {
     function selectList(e) {
-        console.log("selecting list: ", todoList.id);
         onListSelected(todoList.id);
     }
     return <button onClick={selectList}>{todoList.name}</button>
 }
 
 function TodoSidebar({ onListSelected }) {
-    // initialize state
     const [listName, setListName] = useState("");
     const [todoLists, setTodoLists] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -18,9 +16,11 @@ function TodoSidebar({ onListSelected }) {
 
 
     useEffect(() => {
+        console.log("sidebar useEffect");
         API.getLists().then(lists => {
             setTodoLists(lists)
         }).catch((error) => {
+            console.log("API error occurred: ", error);
             setError(error);
         }).finally(() => {
             setLoading(false);
@@ -37,6 +37,16 @@ function TodoSidebar({ onListSelected }) {
         }
     }
 
+    if (error) {
+        return <b>API error occurred</b>
+    }
+
+    console.log('rendering sidebar');
+    const todoComponents = todoLists.map(tList => {
+        return <TodoListButton todoList={tList} onListSelected={onListSelected} />
+
+    });
+
     return (
         <>
             <form className='todo-css' onSubmit={addList}>
@@ -49,15 +59,13 @@ function TodoSidebar({ onListSelected }) {
                     {
                         // e.target is refering to the target element that triggered this event. i.e., the input field
                         // adding .value retreves the value from the input field
-                        // setInput updates the input state with the new value from the input field
+                        // setListName updates the input state with the new value from the input field
                     }
                 </input>
                 <button className='button' type='submit'>Create List</button>
             </form>
             <div>
-                {todoLists.map(tList => (
-                    <TodoListButton todoList={tList} onListSelected={onListSelected} />
-                ))}
+                {todoComponents}
             </div >
         </>
     );

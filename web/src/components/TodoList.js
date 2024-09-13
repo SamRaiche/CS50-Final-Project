@@ -6,7 +6,8 @@ function TodoList({ listId }) {
     const [todoList, setTodoList] = useState(null);
     const [newTodo, setNewTodo] = useState("");
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+
+    console.log("creating todolist: ", listId);
 
     //
     // useEffect executes during render or whenever the list of given state
@@ -16,23 +17,18 @@ function TodoList({ listId }) {
     // to true (i.e., someone triggered a load), we retrieve todo lists.
     //
     useEffect(() => {
-
         if (listId <= 0) {
             return;
         }
-
-        console.log("loading list", listId);
-
         API.getList(listId).then(list => {
             console.log('retrieved list: ', list);
             setTodoList(list);
-            setLoading(false);
         }).catch((error) => {
-            setError(error);
+            console.log("api error occurred: ", error);
         }).finally(() => {
             setLoading(false);
         });
-    }, [loading, todoList]);
+    }, [loading, listId]);
 
     const addTodo = (e) => {
         e.preventDefault();  // Prevent the form from reloading
@@ -45,28 +41,25 @@ function TodoList({ listId }) {
             console.log("warning: list isn't loaded");
             return;
         }
-        API.createTodo(todoList.id, newTodo).then(() => {
+        API.createTodo(listId, newTodo).then(() => {
             setLoading(true);
             setNewTodo("");
-        });
+        }).catch((error) => {
+            console.log("api error occurred: ", error);
+        })
     }
 
-    // Renders TodoForm and when doing so passes addTodo as a prop to the todoForm
-    if (error) {
-        return (
-            <b>An error occurred: {error}</b>
-        )
-    }
-    console.log("rendering list: ", listId, "todo list: ", todoList);
     if (!todoList) {
         return <b>select a list</b>
     }
 
+    const todos = todoList.todos.map(todo => {
+        return <div key={todo.id}>{todo.title} {todo.completed ? "(completed)" : ""}</div>
+    });
+
     return (
         <>
-            {todoList.todos.map(todo => (
-                <div key={todo.id}>{todo.title} {todo.completed ? "(completed)" : ""}</div>
-            ))}
+            {todos}
             <form className='todo-css' onSubmit={addTodo}>
                 <input
                     type='text'
