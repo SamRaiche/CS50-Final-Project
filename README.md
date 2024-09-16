@@ -1,6 +1,6 @@
 # Todo List Web Application and API
 
-#### Video Demo: <url_here>
+#### Video Demo: [Watch the video here!](https://youtu.be/WT36xzns38M)
 #### Description:
 
 This project is a simple todo list application which allows you to create lists of todos. There are two folders that make up this project: `api` and `web`.
