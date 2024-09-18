@@ -31,15 +31,15 @@ Following React's component architecture, each component has a distinct purpose.
 
 Within `App`, `TodoBrowser` is included as a child component. `TodoBrowser` wraps `TodoSidebar` and `TodoList`. `TodoBrowser` also maintains the state of which list is selected so the user can add to the correct list. `TodoSidebar` allows the user to create new lists through the use of a form and render each list to the screen as a button. The other file wrapped within `TodoBrowser` is `TodoList`. `TodoList` allows users to add tasks to the selected list.
 
-I chose to write the UI in react because it's popular and provides a well defined structure for building websites. It's easier to write bigger, more complex websites in react than it would be if I were to use `<script>` tags and raw javascript everywhere. The downside is there was a pretty high learning curve to react.
+We chose to write the UI in react because it's popular and provides a well defined structure for building websites. It's easier to write bigger, more complex websites in react than it would be we were to use `<script>` tags and raw javascript everywhere. The downside is there was a pretty high learning curve to react.
 
 #### API
 
-While I could have used local state, I wanted to create an API and save state to a database. This allows me to not lose data when I refresh the page or restart the browser as the data is stored on a server.
+While we could have used local state, we wanted to create an API and save state to a database. This allows usme to not lose data when we refresh the page or restart the browser as the data is stored on a server.
 
-The API is written in [nest.js](https://nestjs.com]. Nest.js is like react in that it provides a structure and patterns for building an API. With an API this simple I could have used flask, but the structure of nest would allow me to scale it much larger.
+The API is written in [nest.js](https://nestjs.com]. Nest.js is like react in that it provides a structure and patterns for building an API. With an API this simple we could have used flask, but the structure of nest would allow me to scale it much larger.
 
-Nest is based on modules. There is a single module in the `api/arc/todolist` folder. The `TodoListModule` follows's nest's recommended convention of using a service, entities and repositories. I used the default object relational mapper to save data to a sqlite database. Here is how the project is structured:
+Nest is based on modules, which encapsulate logic and components into groups. There is a single module in the `api/arc/todolist` folder. The `TodoListModule` follows's nest's recommended convention of using a service, entities and repositories. We used the default object relational mapper to save data to a sqlite database. Here is how the project is structured:
 
 
 ```
@@ -63,10 +63,10 @@ The service is what gets and saves data to the database. It uses repositories fo
 
 #### Summary
 
-This project allowed me to learn javascript better. It also made me learn about how to think about websites and APIs using frameworks which are used in the real world to build large websites and applications.
+This project allowed us to learn javascript better. It also made us learn about how to think about websites and APIs using frameworks which are used in the real world to build large websites and applications.
 
 Both react and nest.js are really geared towards breaking applications down into smaller pieces. React's concept of components a lot like nest's concept of modules. Each component / module is responsible for doing one thing. It provides an interface: react's interface are "props" and "events" and nest's interface are the API calls exposed from a module's controllers.
 
-I also liked the fact that I could use javascript on both the UI and API. There is really no getting around using javascript on the UI to make websites, but for the API I could have used any programming language. While I could have used python / flask, using nest allowed me to just use javascript everywhere.
+We also liked the fact that we could use javascript on both the UI and API. There is really no getting around using javascript on the UI to make websites, but for the API I could have used any programming language. While we could have used python / flask, using nest allowed us to just use javascript everywhere.
 
-I also had to learn how to setup my environment and get the applications to compile and run. That was a process and learning curve as I had to learn `npm` and understand things like `package.json`.
+We also had to learn how to setup our environments and get the applications to compile and run. That was a process and learning curve as we had to learn `npm` and understand things like `package.json`.
