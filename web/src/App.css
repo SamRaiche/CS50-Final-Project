@@ -1,87 +1,73 @@
+/* src/App.css */
 .App {
-  text-align: center;
-}
-
-#Todo title .todo-css h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
-  text-align: center;
-  margin-top: 100px;
-}
-
-/* Input Field */
-.todo-css input[type="text"] {
-  width: calc(100% - 1000px);
-  /* Not the greatest design for different devices (monitor and laptop look different)*/
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.todo-css button {
-  padding: 12px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-@keyframes randomColors {
-  0% {
-    background-color: #FF5733;
-  }
-
-  /* Red */
-  25% {
-    background-color: #33FF57;
-  }
-
-  /* Green */
-  50% {
-    background-color: #3357FF;
-  }
-
-  /* Blue */
-  75% {
-    background-color: #F0FF33;
-  }
-
-  /* Yellow */
-  100% {
-    background-color: #FF33A8;
-  }
-
-  /* Pink */
-}
-
-.todolist {
-  width: calc(100% - 1000px);
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s ease;
-  text-align: left;
-  margin: 0 auto;
-  background-color: lightcoral;
-  color: black
+    display: flex;
+    font-family: Arial, sans-serif;
 }
 
 .sidebar {
-  margin: 0;
-  padding: 0;
-  height: 100 vh;
-  height: 100%;
-  width: 300px;
-  background-color: lightblue;
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.sidebar button.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.main-content h2 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.new-task {
+    display: flex;
+    gap: 10px;
+}
+
+.new-task input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.new-task button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
 }

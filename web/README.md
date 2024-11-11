@@ -9,7 +9,8 @@ npm run start:dev
 
 # start the app
 cd web
-&& npm start
+npm install
+npm start
 ```
 
 # Getting Started with Create React App
