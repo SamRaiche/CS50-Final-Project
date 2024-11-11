@@ -3,7 +3,7 @@ import { Todo } from './entities/todo.entity';
 import { TodoList } from './entities/todolist.entity';
 import { TodoListService } from './todolist.service';
 
-@Controller('todolist')
+@Controller('todolist') 
 export class TodoListController {
 
   constructor(private readonly todoService: TodoListService) { }

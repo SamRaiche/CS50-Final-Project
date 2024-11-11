@@ -35,7 +35,7 @@ We chose to write the UI in react because it's popular and provides a well defin
 
 #### API
 
-While we could have used local state, we wanted to create an API and save state to a database. This allows usme to not lose data when we refresh the page or restart the browser as the data is stored on a server.
+While we could have used local state, we wanted to create an API and save state to a database. This allows us to not lose data when we refresh the page or restart the browser as the data is stored on a server.
 
 The API is written in [nest.js](https://nestjs.com]. Nest.js is like react in that it provides a structure and patterns for building an API. With an API this simple we could have used flask, but the structure of nest would allow me to scale it much larger.
 
