@@ -56,11 +56,6 @@ function TodoSidebar({ onListSelected }) {
                     placeholder='Create a list...'
                     value={listName}
                     onChange={(e) => setListName(e.target.value)}>
-                    {
-                        // e.target is refering to the target element that triggered this event. i.e., the input field
-                        // adding .value retreves the value from the input field
-                        // setListName updates the input state with the new value from the input field
-                    }
                 </input>
                 <button className='button' type='submit'>Create List</button>
             </form>
