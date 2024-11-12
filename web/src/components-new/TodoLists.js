@@ -5,3 +5,7 @@ export default function TodoLists() {
     <div>TodoLists</div>
   )
 }
+
+
+// List title
+// List props - list names as buttons

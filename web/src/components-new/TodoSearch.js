@@ -5,3 +5,9 @@ export default function TodoSearch() {
     <div>TodoSearch</div>
   )
 }
+
+
+// Personal Todos title
+// Todo tasks as items
+// Task input 
+// Add new task button
