@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import TodoLists from './TodoLists';
-import TodoAdd from './TodoAdd';
+import TodoLists from './componentsNew/TodoLists';
+import TodoAdd from './componentsNew/TodoSearch';
 
 const initialLists = {
     "Personal": [{ id: 1, task: "Buy groceries", completed: false }],
