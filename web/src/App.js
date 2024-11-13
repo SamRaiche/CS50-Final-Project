@@ -11,6 +11,7 @@ const initialLists = {
 function App() {
     const [lists, setLists] = useState(initialLists);
     const [selectedList, setSelectedList] = useState("Personal");
+    const [newListName, setNewListName] = useState("");
 
     // Change list on sidebar click
     const handleListClick = (listName) => {
@@ -41,6 +42,17 @@ function App() {
         });
     };
 
+    const handleAddList = () => {
+        if (newListName && !lists[newListName]) { // Avoid adding empty or duplicate lists, newListName is a truthy value
+            setLists({
+                ...lists,
+                [newListName]: []
+            });
+            setSelectedList(newListName); // Optionally, set the new list as the selected list
+            setNewListName("");
+        }
+    };
+
     return (
         <div className="App">
             <aside className="sidebar">
@@ -54,6 +66,15 @@ function App() {
                         {listName}
                     </button>
                 ))}
+                <input // Working on CSS here
+                    type="text"
+                    value={newListName}
+                    onChange={(e) => setNewListName(e.target.value)}
+                    placeholder="New list name"
+                />
+                <button className='new-todo button custom-size'
+                    onClick={handleAddList}>Add List
+                </button>
             </aside>
             <main className="main-content">
                 <TodoLists 

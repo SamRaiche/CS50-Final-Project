@@ -67,7 +67,16 @@ li.completed span {
 .new-task button {
     padding: 10px 15px;
     border: none;
-    background-color: #4caf50;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.new-todo.button.custom-size {
+    margin-top: 10px; /* Moves the button down */
+    padding: 5px 8px; /* Makes it smaller horizontally */
+    border: none;
+    background-color: black;
     color: white;
     cursor: pointer;
 }
