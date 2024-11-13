@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import API from './services/api'
+import TodoLists from './TodoLists';
+import TodoAdd from './TodoAdd';
 
-// Mock Data
 const initialLists = {
     "Personal": [{ id: 1, task: "Buy groceries", completed: false }],
     "Work": [{ id: 2, task: "Send report", completed: true }],
@@ -11,7 +11,6 @@ const initialLists = {
 function App() {
     const [lists, setLists] = useState(initialLists);
     const [selectedList, setSelectedList] = useState("Personal");
-    const [newTask, setNewTask] = useState("");
 
     // Change list on sidebar click
     const handleListClick = (listName) => {
@@ -19,18 +18,16 @@ function App() {
     };
 
     // Add a new task to the selected list
-    const handleAddTask = () => {
-        if (newTask.trim() === "") return;
+    const handleAddTask = (task) => {
         const newTaskObj = {
             id: Date.now(),
-            task: newTask,
+            task,
             completed: false,
         };
         setLists({
             ...lists,
             [selectedList]: [...lists[selectedList], newTaskObj],
         });
-        setNewTask("");
     };
 
     // Toggle completion status
@@ -58,28 +55,16 @@ function App() {
                 ))}
             </aside>
             <main className="main-content">
-                <h2>{selectedList} To-Dos</h2>
-                <ul>
-                    {lists[selectedList].map((task) => (
-                        <li key={task.id} className={task.completed ? "completed" : ""}>
-                            <span onClick={() => handleToggleComplete(task.id)}>
-                                {task.task}
-                            </span>
-                        </li>
-                    ))}
-                </ul>
-                <div className="new-task">
-                    <input
-                        type="text"
-                        placeholder="Add a new task"
-                        value={newTask}
-                        onChange={(e) => setNewTask(e.target.value)}
-                    />
-                    <button onClick={handleAddTask}>Add Task</button>
-                </div>
+                <TodoLists 
+                    tasks={lists[selectedList]} 
+                    toggleComplete={handleToggleComplete} 
+                    selectedList={selectedList}
+                />
+                <TodoAdd addTask={handleAddTask} />
             </main>
         </div>
     );
+
 }
 
 export default App;
