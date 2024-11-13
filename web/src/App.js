@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import TodoLists from './componentsNew/TodoLists';
-import TodoAdd from './componentsNew/CreateTodo';
+import CreateTodo from './componentsNew/CreateTodo';
 
 const initialLists = {
     "Personal": [{ id: 1, task: "Buy groceries", completed: false }],
@@ -82,7 +82,7 @@ function App() {
                     completionStatus={handleCompletionStatus} 
                     selectedList={selectedList}
                 />
-                <TodoAdd addTask={handleAddTask} />
+                <CreateTodo addTask={handleAddTask} /> 
             </main>
         </div>
     );
