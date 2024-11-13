@@ -48,7 +48,7 @@ function App() {
                 ...lists,
                 [newListName]: []
             });
-            setSelectedList(newListName); // Optionally, set the new list as the selected list
+            setSelectedList(newListName); // Set the new list as the selected list
             setNewListName("");
         }
     };
