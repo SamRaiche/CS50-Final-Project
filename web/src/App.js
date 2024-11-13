@@ -66,7 +66,7 @@ function App() {
                         {listName}
                     </button>
                 ))}
-                <input // Working on CSS here
+                <input 
                     type="text"
                     value={newListName}
                     onChange={(e) => setNewListName(e.target.value)}

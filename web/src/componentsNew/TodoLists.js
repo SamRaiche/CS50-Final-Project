@@ -4,7 +4,7 @@ import React from 'react';
 function TodoLists({ tasks, completionStatus, selectedList }) {
     return (
         <div>
-            <h2>{selectedList} To-Dos</h2>
+            <h2>{selectedList} Todo's</h2>
             <ul>
                 {tasks.map((task) => (
                     <li 
