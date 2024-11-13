@@ -19,19 +19,20 @@ function App() {
 
     // Add a new task to the selected list
     const handleAddTask = (task) => {
+        // Create new task object
         const newTaskObj = {
             id: Date.now(),
             task,
             completed: false,
         };
         setLists({
-            ...lists,
+            ...lists, // ... allows me to add a new task object to my current dict (initalLists) without overwriting 
             [selectedList]: [...lists[selectedList], newTaskObj],
         });
     };
 
-    // Toggle completion status
-    const handleToggleComplete = (taskId) => {
+    // Change completion status
+    const handleCompletionStatus = (taskId) => {
         setLists({
             ...lists,
             [selectedList]: lists[selectedList].map(task =>
@@ -57,7 +58,7 @@ function App() {
             <main className="main-content">
                 <TodoLists 
                     tasks={lists[selectedList]} 
-                    toggleComplete={handleToggleComplete} 
+                    completionStatus={handleCompletionStatus} 
                     selectedList={selectedList}
                 />
                 <TodoAdd addTask={handleAddTask} />

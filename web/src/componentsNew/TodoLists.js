@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function TodoLists({ tasks, toggleComplete, selectedList }) {
+function TodoLists({ tasks, completionStatus, selectedList }) {
     return (
         <div>
             <h2>{selectedList} To-Dos</h2>
@@ -10,7 +10,7 @@ function TodoLists({ tasks, toggleComplete, selectedList }) {
                     <li 
                         key={task.id} 
                         className={task.completed ? "completed" : ""}
-                        onClick={() => toggleComplete(task.id)}
+                        onClick={() => completionStatus(task.id)}
                     >
                         {task.task}
                     </li>
