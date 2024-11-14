@@ -1,0 +1,82 @@
+/* src/App.css */
+.App {
+    display: flex;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.sidebar button.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.main-content h2 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.new-task {
+    display: flex;
+    gap: 10px;
+}
+
+.new-task input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.new-task button {
+    padding: 10px 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.new-todo.button.custom-size {
+    margin-top: 10px; /* Moves the button down */
+    padding: 5px 8px; /* Makes it smaller horizontally */
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
