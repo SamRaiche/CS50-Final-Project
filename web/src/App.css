@@ -84,3 +84,7 @@
   width: 300px;
   background-color: lightblue;
 }
+
+.strikethrough {
+  color: red;
+}

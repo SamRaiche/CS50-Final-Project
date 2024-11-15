@@ -7,6 +7,7 @@ function TodoList({ listId }) {
     const [newTodo, setNewTodo] = useState("");
     const [loading, setLoading] = useState(true);
 
+
     console.log("creating todolist: ", listId);
 
     //
@@ -54,14 +55,21 @@ function TodoList({ listId }) {
         return <b>select a list</b>
     }
 
+    const completion = (todoid) => {
+        API.completeTodo(listId, todoid);
+    };
+
     // Generates div's for each todo title in a specific todo list recgonized by a todo it
     const todos = todoList.todos.map(todo => {
-        return <div key={todo.id}>{todo.title} {todo.completed ? "(completed)" : ""}</div>
+        return <button key={todo.id} onClick={() => completion(todo.id)}
+        >{todo.title} {todo.completed ? "(completed)" : ""}
+        </button>
     });
 
     return (
         <>
             {todos}
+            
             <form className='todo-css' onSubmit={addTodo}>
                 <input
                     type='text'
