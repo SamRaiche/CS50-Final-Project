@@ -14,7 +14,7 @@ function TodoSidebar({ onListSelected }) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-
+    // Pull in existing lists from Todo lists
     useEffect(() => {
         console.log("sidebar useEffect");
         API.getLists().then(lists => {

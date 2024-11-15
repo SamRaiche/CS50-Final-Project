@@ -16,6 +16,7 @@ function TodoList({ listId }) {
     // Every time the component is rendered, or when the `loading` field is set
     // to true (i.e., someone triggered a load), we retrieve todo lists.
     //
+    // Helps maintain state when toggling between lists
     useEffect(() => {
         if (listId <= 0) {
             return;
@@ -33,7 +34,7 @@ function TodoList({ listId }) {
     const addTodo = (e) => {
         e.preventDefault();  // Prevent the form from reloading
 
-        if (!newTodo.trim()) {
+        if (!newTodo.trim()) { // Checks for empty input
             return;
         }
 
@@ -53,6 +54,7 @@ function TodoList({ listId }) {
         return <b>select a list</b>
     }
 
+    // Generates div's for each todo title in a specific todo list recgonized by a todo it
     const todos = todoList.todos.map(todo => {
         return <div key={todo.id}>{todo.title} {todo.completed ? "(completed)" : ""}</div>
     });
