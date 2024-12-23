@@ -33,9 +33,9 @@ function TodoList({ listId }) {
     }, [loading, listId]);
 
     const addTodo = (e) => {
-        e.preventDefault();  // Prevent the form from reloading
+        e.preventDefault();  
 
-        if (!newTodo.trim()) { // Checks for empty input
+        if (!newTodo.trim()) { 
             return;
         }
 
@@ -55,16 +55,22 @@ function TodoList({ listId }) {
         return <b>select a list</b>
     }
 
-    const completion = (todoid) => {
-        API.completeTodo(listId, todoid);
-    };
+    // From interview, taking out to see what happens
 
-    // Generates div's for each todo title in a specific todo list recgonized by a todo it
-    const todos = todoList.todos.map(todo => {
-        return <button key={todo.id} onClick={() => completion(todo.id)}
-        >{todo.title} {todo.completed ? "(completed)" : ""}
-        </button>
-    });
+    // const completion = (todoid) => {
+    //     API.completeTodo(listId, todoid);
+    // };
+
+    // // Generates div's for each todo title in a specific todo list recgonized by a todo it
+    const todos = todoList.todos.map((todo) => (
+        <div key={todo.id}>
+            {todo.title} {todo.completed ? "(completed)" : ""}
+        </div>
+    ));
+    //     return <button key={todo.id} onClick={() => completion(todo.id)}
+    //     >{todo.title} {todo.completed ? "(completed)" : ""}
+    //     </button>
+    // });
 
     return (
         <>
