@@ -37,9 +37,9 @@ const API = {
         return axios.post(getURL(listId), { title });
     },
 
-    completeTodo: async function (id, todoid) {
-        return axios.post(getURL(`${id}/${todoid}`))
-    }
+    // completeTodo: async function (id, todoid) {
+    //     return axios.post(getURL(`${id}/${todoid}`))
+    // }
 
 }
 

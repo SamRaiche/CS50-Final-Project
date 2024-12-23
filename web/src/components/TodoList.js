@@ -62,11 +62,13 @@ function TodoList({ listId }) {
     // };
 
     // // Generates div's for each todo title in a specific todo list recgonized by a todo it
+
     const todos = todoList.todos.map((todo) => (
         <div key={todo.id}>
-            {todo.title} {todo.completed ? "(completed)" : ""}
+            {todo.title}
         </div>
     ));
+
     //     return <button key={todo.id} onClick={() => completion(todo.id)}
     //     >{todo.title} {todo.completed ? "(completed)" : ""}
     //     </button>
